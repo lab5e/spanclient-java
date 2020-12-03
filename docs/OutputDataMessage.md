@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **transport** | **String** |  |  [optional]
 **udpMetaData** | [**UDPMetadata**](UDPMetadata.md) |  |  [optional]
 **coapMetaData** | [**CoAPMetadata**](CoAPMetadata.md) |  |  [optional]
+**messageId** | **String** |  |  [optional]
 
 
 

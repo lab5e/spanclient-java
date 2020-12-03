@@ -169,7 +169,7 @@ Name | Type | Description  | Notes
 
 <a name="listDeviceData"></a>
 # **listDeviceData**
-> ListDataResponse listDeviceData(collectionId, deviceId, limit, start, end)
+> ListDataResponse listDeviceData(collectionId, deviceId, limit, start, end, offset)
 
 Get payloads
 
@@ -202,8 +202,9 @@ public class Example {
     Integer limit = 56; // Integer | Limit the number of payloads to return. The default is 512.
     String start = "start_example"; // String | Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch.
     String end = "end_example"; // String | End of time range. The default is the current time stamp. Value is in milliseconds since epoch.
+    String offset = "offset_example"; // String | The message offset based on the message ID. This parameter can't be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned.
     try {
-      ListDataResponse result = apiInstance.listDeviceData(collectionId, deviceId, limit, start, end);
+      ListDataResponse result = apiInstance.listDeviceData(collectionId, deviceId, limit, start, end, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DevicesApi#listDeviceData");
@@ -225,6 +226,7 @@ Name | Type | Description  | Notes
  **limit** | **Integer**| Limit the number of payloads to return. The default is 512. | [optional]
  **start** | **String**| Start of time range. The default is 24 hours ago. Value is in milliseconds since epoch. | [optional]
  **end** | **String**| End of time range. The default is the current time stamp. Value is in milliseconds since epoch. | [optional]
+ **offset** | **String**| The message offset based on the message ID. This parameter can&#39;t be combined with the start and end parameters. If no parameter is set the first N messages will be returned. If this parameter is set the next N messages (from newest to oldest) with message ID less than the offset will be returned. | [optional]
 
 ### Return type
 
